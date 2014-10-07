@@ -1,0 +1,16 @@
+[root@centos64 t1]# make
+make -C /lib/modules/2.6.32-358.18.1.el6.x86_64/build M=/home/fakewing/t1 modules
+make[1]: Entering directory `/usr/src/kernels/2.6.32-358.18.1.el6.x86_64'
+  CC [M]  /home/fakewing/t1/task1.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/fakewing/t1/task1.mod.o
+  LD [M]  /home/fakewing/t1/task1.ko.unsigned
+  NO SIGN [M] /home/fakewing/t1/task1.ko
+make[1]: Leaving directory `/usr/src/kernels/2.6.32-358.18.1.el6.x86_64'
+[root@centos64 t1]# insmod task1.ko
+[root@centos64 t1]# dmesg | tail -1
+Hello world!
+[root@centos64 t1]# rmmod task1.ko
+[root@centos64 t1]# dmesg | tail -1
+exit task01 kernel module.
