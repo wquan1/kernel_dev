@@ -1,16 +1,16 @@
-[root@centos64 t1]# make
-make -C /lib/modules/2.6.32-358.18.1.el6.x86_64/build M=/home/fakewing/t1 modules
-make[1]: Entering directory `/usr/src/kernels/2.6.32-358.18.1.el6.x86_64'
-  CC [M]  /home/fakewing/t1/task1.o
+[fakewing@localhost task01]$ sudo make
+[sudo] password for fakewing: 
+make -C /lib/modules/3.11.10-301.fc20.i686/build M=/home/fakewing/src/kernel_dev/kernel_dev/task01 modules
+make[1]: Entering directory `/usr/src/kernels/3.11.10-301.fc20.i686'
+  CC [M]  /home/fakewing/src/kernel_dev/kernel_dev/task01/task01.o
   Building modules, stage 2.
   MODPOST 1 modules
-  CC      /home/fakewing/t1/task1.mod.o
-  LD [M]  /home/fakewing/t1/task1.ko.unsigned
-  NO SIGN [M] /home/fakewing/t1/task1.ko
-make[1]: Leaving directory `/usr/src/kernels/2.6.32-358.18.1.el6.x86_64'
-[root@centos64 t1]# insmod task1.ko
-[root@centos64 t1]# dmesg | tail -1
+  CC      /home/fakewing/src/kernel_dev/kernel_dev/task01/task01.mod.o
+  LD [M]  /home/fakewing/src/kernel_dev/kernel_dev/task01/task01.ko
+make[1]: Leaving directory `/usr/src/kernels/3.11.10-301.fc20.i686'
+[fakewing@localhost task01]# insmod task01.ko
+[fakewing@localhost task01]# dmesg | tail -1
 Hello world!
-[root@centos64 t1]# rmmod task1.ko
-[root@centos64 t1]# dmesg | tail -1
+[fakewing@localhost task01]# rmmod task01.ko
+[fakewing@localhost task01]# dmesg | tail -1
 exit task01 kernel module.
