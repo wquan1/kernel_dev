@@ -3,10 +3,13 @@
 # refer to http://www.tldp.org/LDP/lkmpg/2.6/lkmpg.pdf Example 2-2
 #
 
-obj-m += task1.o
+obj-m += task01.o
+
+KDIR	:= /lib/modules/$(shell uname -r)/build
+PWD	:= $(shell pwd)
 
 all:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+	make -C $(KDIR) M=$(PWD) modules
 
 clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+	make -C $(KDIR) M=$(PWD) clean
