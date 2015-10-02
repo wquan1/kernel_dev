@@ -6,18 +6,18 @@
  */
 
 #include <linux/module.h>    // Needed by all kernel modules
-#include <linux/kernel.h>    // Needed for KERN_INFO
+#include <linux/kernel.h>    // Needed for KERN_DEBUG
 #include <linux/init.h>      // Needed for __init and __exit macros
 
 static int __init task01_init(void)
 {
-    printk(KERN_INFO "Hello world!\n");
+    printk(KERN_DEBUG "Hello world!\n");
     return 0;
 }
 
 static void __exit task01_exit(void)
 {
-    printk(KERN_INFO "exit task01 kernel module.\n");
+    printk(KERN_DEBUG "exit task01 kernel module.\n");
 }
 
 module_init(task01_init);
